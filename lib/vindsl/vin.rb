@@ -23,7 +23,7 @@ module Vindsl
       year_character = position(10)
       base = pre_2009? ? 1980 : 2010
 
-      base + Vindsl::Alphabet::ALPHABET_WITH_NUMBERS.index(year_character)
+      base + Vindsl::Alphabet::ALPHABET_FOR_YEARS.index(year_character)
     end
 
     private
