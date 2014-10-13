@@ -39,7 +39,12 @@ module Vindsl
       'AAV' => "Volkswagen",
       'AFA' => "Ford",
       'CL9' => "Wallyscar",
-      'JA' =>  "Isuzu",
+      'JA3' => 'Mitsubishi',
+      'JA4' => 'Mitsubishi',
+      'JA7' => 'Mitsubishi',
+      'JAA' => 'Isuzu',
+      'JAB' => 'Isuzu',
+      'JAC' => 'Isuzu',
       'JF' =>  "Fuji Heavy Industries",
       'JH' =>  "Honda",
       'JMB' => "Mitsubishi",
@@ -166,8 +171,16 @@ module Vindsl
       COUNTRY_MATCHER.find vin
     end
 
+    def self.country_prefixes_for(country_name)
+      COUNTRIES.select{ |k, name| name == country_name }.keys
+    end
+
     def self.manufacturer_for(vin)
       MANUFACTURER_MATCHER.find vin
+    end
+
+    def self.manufacturer_prefixes_for(manufacturer_name)
+      MANUFACTURERS.select{ |k, name| name == manufacturer_name }.keys
     end
   end
 end
